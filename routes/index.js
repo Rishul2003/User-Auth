@@ -137,10 +137,10 @@ router.get('/reset-password',async function(req,res){
 })
 router.post('/reset-password',async function(req,res){
     try{
-        // const token=req.query.token;
+        const token=req.query.token;
         console.log(token);
         let verificate=jwt.verify(token, process.env.resetsecret);
-        // console.log(req.body);
+        console.log(req.body);
         if(verificate){
             if(!req.body.newPassword){
                 return res.status(404).json("ENter new password");
