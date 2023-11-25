@@ -87,7 +87,7 @@ router.post('/forget-password',async function(req,res){
 
         const resetToken = jwt.sign({ userId: user._id }, process.env.resetsecret, { expiresIn: '1h' });
 
-        const resetLink = `http://localhost:8000/reset-password?token=${resetToken}`;
+        const resetLink = process.env.route+`/reset-password?token=${resetToken}`;
 
     
         const transporter = nodemailer.createTransport({
