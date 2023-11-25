@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="/css/home.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="top">
+            <h1>Login Page</h1>
+        </div>
+        <form method="post" action="/login">
+            <input type="text" placeholder="Username" class="input" name="username">
+            <input type="password" placeholder="Password" class="input" name="password">
+            <button name="login" type="submit">Sign In</button>
+            <a href=# class="signup" onclick="switchAccount()">
+                Do not have an account yet ?
+            </a>
+        </form>
+    </div>
+    <div id="container2">
+        <div class="top">
+            <h1>REGISTER</h1>
+        </div>
+        <form method="post" action="/register">
+            <input type="text" placeholder="Username" class="input" name="username">
+            <input type="email" placeholder="Email" class="input" name="email">
+            <input type="password" placeholder="Password" class="input" name="password">
+            
+            <button name="signup" type="submit">Sign Up</button>
+            <a href=# class="signup" onclick="switchAccount2()">
+                Already have an account ?
+            </a>
+        </form>
+    </div>
+    <div id="container3">
+        <div class="top">
+            <h1>FORget Password</h1>
+        </div>
+        <form method="post" action="/forget-password">
+            <input type="email" placeholder="Email" class="input" name="email">
+            <button name="signup" type="submit">SEND MAIL</button>
+        </form>
+    </div>
+    <a href="#" onclick="switchAccount3()">FORGET PASSWORD</a>
+    <script>
+        function switchAccount () {
+    document.getElementById("container").style.display = "none";
+    document.getElementById("container2").style.display = "flex";
+    document.title = "Sign Up Page";
+}
+
+function switchAccount2 () {
+    document.getElementById("container").style.display = "flex";
+    document.getElementById("container2").style.display = "none";
+    document.title = "Login Page";
+}
+function switchAccount3 () {
+    document.getElementById("container").style.display = "none";
+    document.getElementById("container2").style.display = "none";
+    document.getElementById("container3").style.display = "flex";
+    document.title = "Login Page";
+}
+    </script>
+</body>
+</html>
